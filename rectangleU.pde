@@ -1,4 +1,4 @@
-class Rectangle {
+class RectangleU {
 
   //fields
   color col;
@@ -7,21 +7,21 @@ class Rectangle {
   int w;
   int h;
   int speed;
-  int wv;
+  int hv;
   
   boolean moveRight;
    
   //constructor
-  Rectangle(){
+  RectangleU(){
     //assign values to fields
-    col = color(0 , 0, random(100,256),random(200));
-    speed = x + 100;
+    col = color(random(150,256) , 0 , 0,random(150));
+    speed = y + 100;
 
-    x = int(random(300,600));
-    y = int(random(180,420));
-    w = int(random(10,600));
-    h = int(random(10,20));
-    wv = int(random(20,60));
+    x = int(random(260,500));
+    y = int(random(180,360));
+    w = -h + 200;
+    h = int(random(10,600));
+    hv = int(random(10,30));
     
   }//brace of constructor
   
@@ -36,14 +36,14 @@ class Rectangle {
  
   }
   
-  void moveRect(boolean isRight){
+  void moveRect(boolean isUp){
      
-     if(isRight){
-     x += speed;
-     w -= wv;
+     if(isUp){
+     y -= speed;
+     h -= hv;
      }else{
-      x -= speed;
-      w -= wv;
+      y += speed;
+       h -= hv;
      }
    }
    

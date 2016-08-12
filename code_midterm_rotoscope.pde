@@ -17,6 +17,16 @@ String currentFilename;
 // EDIT THIS LINE WITH YOUR NAME!
 String studentName = "Liang Shi";
 
+int num = 4;
+Rectangle[] rectsR;
+Rectangle[] rectsL;
+RectangleU[] rectsU;
+RectangleU[] rectsB;
+Line[] linesR;
+Line[] linesL;
+
+
+
 void setup() {
   files = new ArrayList<File>();
 
@@ -39,6 +49,23 @@ void setup() {
   // if that doesn't work, comment it out and uncomment this instead:
   //size(1920, 1080);
   //pixelDensity(1);
+  
+  
+  smooth();
+  rectsR = new Rectangle[num];
+  rectsL = new Rectangle[num];
+  rectsU = new RectangleU[num];
+  rectsB = new RectangleU[num];
+  linesR = new Line[num];
+  linesL = new Line[num];
+  for(int i = 0; i < num; i++){
+     rectsR[i] = new Rectangle();
+     rectsL[i] = new Rectangle();
+     rectsU[i] = new RectangleU();
+     rectsB[i] = new RectangleU();
+     linesR[i] = new Line();
+     linesL[i] = new Line();
+  }
 }
 
 void draw() {
@@ -46,15 +73,26 @@ void draw() {
   prepare();
 
   // BEGIN ADDING YOUR CODE HERE -----
-  
+   for(int i = 0; i < num; i++){
+     rectsR[i].drawRect();
+     rectsR[i].moveRect(true);
+     rectsL[i].drawRect();
+     rectsL[i].moveRect(false);
+     rectsU[i].drawRect();
+     rectsU[i].moveRect(true);
+     rectsB[i].drawRect();
+     rectsB[i].moveRect(false);
+     linesR[i].drawLine(true);
+     linesL[i].drawLine(false);
+   }
   
 
   // STOP ADDING YOUR CODE HERE -----
 
   // DO NOT ALTER THE LINES BELOW
-  //if (frameCount < files.size()) { 
+  //if (frameCount <= files.size()) { 
   //  export();
-  //} else {
+  //} if (frameCount == files.size()) {
   //  exit();
   //}
 }
