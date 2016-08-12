@@ -90,11 +90,11 @@ void draw() {
   // STOP ADDING YOUR CODE HERE -----
 
   // DO NOT ALTER THE LINES BELOW
-  //if (frameCount <= files.size()) { 
-  //  export();
-  //} if (frameCount == files.size()) {
-  //  exit();
-  //}
+  if (frameCount <= files.size()) { 
+    export();
+  } if (frameCount == files.size()) {
+    exit();
+  }
 }
 
 // DO NOT ALTER THIS FUNCTION!!
